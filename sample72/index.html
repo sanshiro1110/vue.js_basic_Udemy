@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+
+<body>
+    <div class="frame">
+        <h1 class="frame__title">JavaScript</h1>
+
+        <div class="frame__inner">
+            <div id="app">
+                <p>{{ number }}</p>
+            </div>
+            <!-- ここに、JavaScriptを記述します -->
+        </div>
+    </div>
+    <script src="../vue.js"></script>
+    <script>
+        //ミックスインの定義
+        let Util = {
+            methods: {
+                addZero: function(value) {
+                    if(value  < 10) {
+                        return '0' + this.number;
+                    } else {
+                        return value;
+                    }
+                }
+            }
+        }
+
+        let app = new Vue({
+            el: "#app",
+            data: {
+                number: 5,
+            },
+            mounted: function() {
+                this.number = this.addZero(this.number);
+            },
+            mixins: [Util],
+        });
+    </script>
+</body>
+
+</html>

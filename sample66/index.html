@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+
+<body>
+    <div class="frame">
+        <h1 class="frame__title">JavaScript</h1>
+
+        <div class="frame__inner">
+            <div id="app">
+                <ul>
+                    <li v-for="i of 365" :key="i">{{ i }}</li>
+                    <!-- <li v-for="ary in arry" key="ary.id">{{ ary }}</li> -->
+                </ul>
+            </div>
+            <!-- ここに、JavaScriptを記述します -->
+        </div>
+    </div>
+    <script src="../vue.js"></script>
+    <script>
+        let app = new Vue({
+            el: "#app",
+            data: {
+                // arry: [1,2,3]
+            }
+        });
+    </script>
+</body>
+
+</html>
